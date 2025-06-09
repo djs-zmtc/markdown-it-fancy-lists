@@ -1,6 +1,6 @@
 [![NPM version](https://img.shields.io/npm/v/@djs-zmtc/markdown-it-fancy-lists.svg?style=flat)](https://www.npmjs.org/package/@djs-zmtc/markdown-it-fancy-lists)
 
-# markdown-it-fancy-lists
+# @djs-zmtc/markdown-it-fancy-lists
 
 Plugin for the [markdown-it](https://github.com/markdown-it/markdown-it)
 markdown parser.
@@ -36,7 +36,7 @@ yarn add @djs-zmtc/markdown-it-fancy-lists
 ES module:
 ```javascript
 import * as MarkdownIt from "markdown-it";
-import { markdownItFancyListPlugin } from "markdown-it-fancy-lists";
+import { markdownItFancyListPlugin } from "@djs-zmtc/markdown-it-fancy-lists";
 
 const parser = new MarkdownIt("default");
 parser.use(markdownItFancyListPlugin);
@@ -46,7 +46,7 @@ parser.render(/* markdown string */);
 CommonJS:
 ```javascript
 const MarkdownIt = require('markdown-it');
-const markdownItFancyListPlugin = require("markdown-it-fancy-lists").markdownItFancyListPlugin;
+const markdownItFancyListPlugin = require("@djs-zmtc/markdown-it-fancy-lists").markdownItFancyListPlugin;
 
 const parser = new MarkdownIt("default");
 parser.use(markdownItFancyListPlugin);

@@ -1,5 +1,5 @@
 {
-	"name": "markdown-it-fancy-lists",
+	"name": "@djs-zmtc/markdown-it-fancy-lists",
 	"version": "1.3.0",
 	"description": "Extension for markdown-it to support additional numbering types for ordered lists (Forked from https://github.com/Moxio/markdown-it-fancy-lists.git)",
 	"keywords": [

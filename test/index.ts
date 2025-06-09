@@ -96,7 +96,7 @@ b. bar
 c. baz
 `;
 		const expectedHtml = `
-<ol type="a">
+<ol type="a" class="oltype-a">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -112,7 +112,7 @@ c. bar
 d. baz
 `;
 		const expectedHtml = `
-<ol type="a" start="2">
+<ol type="a" class="oltype-a" start="2">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -128,7 +128,7 @@ B) bar
 C) baz
 `;
 		const expectedHtml = `
-<ol type="A">
+<ol type="A" class="oltype-A">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -144,7 +144,7 @@ C) bar
 D) baz
 `;
 		const expectedHtml = `
-<ol type="A" start="2">
+<ol type="A" class="oltype-A" start="2">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -160,7 +160,7 @@ ii. bar
 iii. baz
 `;
 		const expectedHtml = `
-<ol type="i">
+<ol type="i" class="oltype-i">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -176,7 +176,7 @@ v. bar
 vi. baz
 `;
 		const expectedHtml = `
-<ol type="i" start="4">
+<ol type="i" class="oltype-i" start="4">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -192,7 +192,7 @@ II) bar
 III) baz
 `;
 		const expectedHtml = `
-<ol type="I">
+<ol type="I" class="oltype-I">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -208,7 +208,7 @@ XIII. bar
 XIV. baz
 `;
 		const expectedHtml = `
-<ol type="I" start="12">
+<ol type="I" class="oltype-I" start="12">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -254,7 +254,7 @@ i. foo
 #. baz
 `;
 		const expectedHtml = `
-<ol type="i">
+<ol type="i" class="oltype-i">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -270,7 +270,7 @@ a. foo
 #. baz
 `;
 		const expectedHtml = `
-<ol type="a">
+<ol type="a" class="oltype-a">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -309,13 +309,13 @@ iii. a plane ticket
 `;
 		const expectedHtml = `
 <p>I need to buy</p>
-<ol type="a">
+<ol type="a" class="oltype-a">
   <li>new shoes</li>
   <li>a coat</li>
   <li>a plane ticket</li>
 </ol>
 <p>I also need to buy</p>
-<ol type="i">
+<ol type="i" class="oltype-i">
   <li>new shoes</li>
   <li>a coat</li>
   <li>a plane ticket</li>
@@ -363,7 +363,7 @@ iv. a plane ticket</p>
   <li>Ninth</li>
   <li>Tenth</li>
   <li>Eleventh
-<ol type="i">
+<ol type="i" class="oltype-i">
   <li>subone</li>
   <li>subtwo</li>
   <li>subthree</li>
@@ -384,10 +384,10 @@ c. charlie
 #. echo
 `;
 		const expectedHtml = `
-<ol type="a" start="3">
+<ol type="a" class="oltype-a" start="3">
   <li>charlie</li>
   <li>delta
-    <ol type="i" start="4">
+    <ol type="i" class="oltype-i" start="4">
       <li>subfour</li>
       <li>subfive</li>
       <li>subsix</li>
@@ -411,11 +411,11 @@ c. charlie
 #. echo
 `;
 		const expectedHtml = `
-<ol type="a" start="3">
+<ol type="a" class="oltype-a" start="3">
   <li><p>charlie</p></li>
   <li><p>delta</p>
     <p>sigma</p>
-    <ol type="i" start="4">
+    <ol type="i" class="oltype-i" start="4">
       <li>subfour</li>
       <li>subfive</li>
       <li>subsix</li>
@@ -438,10 +438,10 @@ ii) Second
 <ol>
   <li>First</li>
 </ol>
-<ol type="A">
+<ol type="A" class="oltype-A">
   <li>First again</li>
 </ol>
-<ol type="i">
+<ol type="i" class="oltype-i">
   <li>Another first</li>
   <li>Second</li>
 </ol>
@@ -455,10 +455,10 @@ I) First
 A) First again
 `;
 		const expectedHtml = `
-<ol type="I">
+<ol type="I" class="oltype-I">
   <li>First</li>
 </ol>
-<ol type="A">
+<ol type="A" class="oltype-A">
   <li>First again</li>
 </ol>
 `;
@@ -476,18 +476,18 @@ i) Second
 ii) First of new list
 `;
 		const expectedHtml = `
-<ol type="A">
+<ol type="A" class="oltype-A">
   <li>First</li>
   <li>Second</li>
 </ol>
-<ol type="I" start="2">
+<ol type="I" class="oltype-I" start="2">
   <li>First of new list</li>
 </ol>
-<ol type="a">
+<ol type="a" class="oltype-a">
   <li>First</li>
   <li>Second</li>
 </ol>
-<ol type="i" start="2">
+<ol type="i" class="oltype-i" start="2">
   <li>First of new list</li>
 </ol>
 `;
@@ -509,22 +509,22 @@ d. foo
 M) foo
 `;
 		const expectedHtml = `
-<ol type="a" start="22">
+<ol type="a" class="oltype-a" start="22">
   <li>foo</li>
 </ol>
-<ol type="A"  start="24">
+<ol type="A" class="oltype-A" start="24">
   <li>foo</li>
 </ol>
-<ol type="a"  start="12">
+<ol type="a" class="oltype-a" start="12">
   <li>foo</li>
 </ol>
-<ol type="A"  start="3">
+<ol type="A" class="oltype-A" start="3">
   <li>foo</li>
 </ol>
-<ol type="a" start="4">
+<ol type="a" class="oltype-a" start="4">
   <li>foo</li>
 </ol>
-<ol type="A" start="13">
+<ol type="A" class="oltype-A" start="13">
   <li>foo</li>
 </ol>
 `;
@@ -546,11 +546,11 @@ C.  bar
 		const expectedHtml = `
 <p>B. Russell was an English philosopher.</p>
 <p>I. Elba is an English actor.</p>
-<ol type="I">
+<ol type="I" class="oltype-I">
   <li>foo</li>
   <li>bar</li>
 </ol>
-<ol start="2" type="A">
+<ol start="2" class="oltype-A" type="A">
   <li>foo</li>
   <li>bar</li>
 </ol>
@@ -598,7 +598,7 @@ IIIº. bar
 IVº. baz
 `;
 			const expectedHtml = `
-<ol type="I" start="2" class="ordinal">
+<ol type="I" class="oltype-I ordinal" start="2" class="ordinal">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -746,7 +746,7 @@ AB) bar
 AC) baz
 `;
 			const expectedHtml = `
-<ol type="A" start="27">
+<ol type="A" class="oltype-A" start="27">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -764,7 +764,7 @@ AA) bar
 AB) baz
 `;
 			const expectedHtml = `
-<ol type="A" start="26">
+<ol type="A" class="oltype-A" start="26">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -782,7 +782,7 @@ ab) bar
 ac) baz
 `;
 			const expectedHtml = `
-<ol type="a" start="27">
+<ol type="a" class="oltype-a" start="27">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -832,7 +832,7 @@ III) bar
 IV) baz
 `;
 			const expectedHtml = `
-<ol type="I" start="2">
+<ol type="I" class="oltype-I" start="2">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>
@@ -850,7 +850,7 @@ II) bar
 IJ) baz
 `;
 			const expectedHtml = `
-<ol type="A" start="242">
+<ol type="A" class="oltype-A" start="242">
   <li>foo</li>
   <li>bar</li>
   <li>baz</li>

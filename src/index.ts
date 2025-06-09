@@ -329,7 +329,21 @@ export const markdownItFancyListPlugin = (markdownIt: MarkdownIt, options?: Mark
 					attrs.push([ "start", marker.start.toString(10) ]);
 				}
 				if (marker.hasOrdinalIndicator === true) {
-					attrs.push([ "class", "ordinal" ]);
+					let idx = -1;
+					for (let i = 0; i < attrs.length; i++) {
+						if (attrs[i].indexOf("class") >= 0) {
+							idx = i;
+							break;
+						}
+					}
+					// const idx = attrs.indexOf("class");
+					if (idx < 0) {
+						attrs.push([ "class", "ordinal" ]);
+					}
+					else {
+						attrs[idx][1] += " ordinal";
+					}
+
 				}
 				token.attrs = attrs;
 

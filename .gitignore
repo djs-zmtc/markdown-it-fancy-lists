@@ -6,3 +6,4 @@
 /esm/
 /package-lock.json
 /yarn.lock
+*.tgz

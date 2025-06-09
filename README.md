@@ -1,7 +1,6 @@
-[![NPM version](https://img.shields.io/npm/v/markdown-it-fancy-lists.svg?style=flat)](https://www.npmjs.org/package/markdown-it-fancy-lists)
+[![NPM version](https://img.shields.io/npm/v/@djs-zmtc/markdown-it-fancy-lists.svg?style=flat)](https://www.npmjs.org/package/@djs-zmtc/markdown-it-fancy-lists)
 
-markdown-it-fancy-lists
-=======================
+# @djs-zmtc/markdown-it-fancy-lists
 
 Plugin for the [markdown-it](https://github.com/markdown-it/markdown-it)
 markdown parser.
@@ -10,23 +9,34 @@ Uses unofficial markdown syntax based on the syntax supported by
 [Pandoc](https://pandoc.org/MANUAL.html#extension-fancy_lists).
 See the section [Syntax](#syntax) below for details.
 
-Installation
-------
+> **NOTE:** This is a fork of Moxio's [markdown-it-fancy-lists](https://www.npmjs.com/package/markdown-it-fancy-lists)
+> with some slight modifications. It adds a `class="oltype-<type>"` to the `<ol>` HTML tag when creating the lettered
+> or Roman-numbered entries (e.g., A marker using `A` would have a `class="oltype-A"` added to the `<ol>` tag). Because
+> CSS and some browser agents are inconsistent with their handing of case-sensitivity where attributes like `type=A` and `type=a` are
+> concerned, this is an attempt to place the case-sensitive type into a class selector which **should** be case-sensitive
+> when setting CSS style rules for each `<ol>` element.
+>
+> This was just a few lines of code changed to implement the addition of the `class=` attribute
+> (and updating the development build tests so the tests pass with the new `class=` attribute).
+> No other functional changes have been made to Moxio's original code, so I haven't incremented the version (yet).
+
+## Installation
+
 This library can be installed from the NPM package registry. Using NPM:
 ```
-npm install markdown-it-fancy-lists
+npm install @djs-zmtc/markdown-it-fancy-lists
 ```
 or Yarn
 ```
-yarn add markdown-it-fancy-lists
+yarn add @djs-zmtc/markdown-it-fancy-lists
 ```
 
-Usage
-------
+## Usage
+
 ES module:
 ```javascript
 import * as MarkdownIt from "markdown-it";
-import { markdownItFancyListPlugin } from "markdown-it-fancy-lists";
+import { markdownItFancyListPlugin } from "@djs-zmtc/markdown-it-fancy-lists";
 
 const parser = new MarkdownIt("default");
 parser.use(markdownItFancyListPlugin);
@@ -36,7 +46,7 @@ parser.render(/* markdown string */);
 CommonJS:
 ```javascript
 const MarkdownIt = require('markdown-it');
-const markdownItFancyListPlugin = require("markdown-it-fancy-lists").markdownItFancyListPlugin;
+const markdownItFancyListPlugin = require("@djs-zmtc/markdown-it-fancy-lists").markdownItFancyListPlugin;
 
 const parser = new MarkdownIt("default");
 parser.use(markdownItFancyListPlugin);
@@ -44,8 +54,8 @@ parser.render(/* markdown string */);
 ```
 
 
-Syntax
-------
+## Syntax
+
 The supported markdown syntax is based on the one used by
 [Pandoc](https://pandoc.org/MANUAL.html#extension-fancy_lists).
 
@@ -117,8 +127,8 @@ are two small differences with Pandoc's syntax:
   list item marker.
   For nested lists, any start number can interrupt a paragraph.
 
-Configuration
--------------
+## Configuration
+
 Options can be provided as a second argument when registering the plugin:
 ```javascript
 parser.use(markdownItFancyListPlugin, {
@@ -168,16 +178,16 @@ Supported configuration options:
   typical list. When a list starts with a numeral that can be both Roman or multi-letter alphabetic,
   like "II", it is considered to be Roman.
 
-Versioning
-----------
+## Versioning
+
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-Contributing
-------------
+## Contributing
+
 Contributions to this project are more than welcome. When reporting an issue,
 please include the input to reproduce the issue, along with the expected
 output. When submitting a PR, please include tests with your changes.
 
-License
--------
+## License
+
 This project is released under the MIT license.

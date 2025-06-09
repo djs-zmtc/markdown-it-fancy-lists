@@ -318,14 +318,32 @@ export const markdownItFancyListPlugin = (markdownIt: MarkdownIt, options?: Mark
 			if (marker.isOrdered === true) {
 				token = state.push("ordered_list_open", "ol", 1);
 				const attrs: [ string, string ][] = [];
+				// Not all user agents can process the case-sensitive 'type=A' vs 'type=a' and
+				// (the two appear the same and thus the wrong CSS rule gets applied)
+				// Add an 'oltype-<marker.type>' to the 'ol' element
 				if (marker.type !== "0" && marker.type !== "#") {
 					attrs.push([ "type", marker.type ]);
+					attrs.push(["class", `oltype-${marker.type}`])
 				}
 				if (marker.start !== 1) {
 					attrs.push([ "start", marker.start.toString(10) ]);
 				}
 				if (marker.hasOrdinalIndicator === true) {
-					attrs.push([ "class", "ordinal" ]);
+					let idx = -1;
+					for (let i = 0; i < attrs.length; i++) {
+						if (attrs[i].indexOf("class") >= 0) {
+							idx = i;
+							break;
+						}
+					}
+					// const idx = attrs.indexOf("class");
+					if (idx < 0) {
+						attrs.push([ "class", "ordinal" ]);
+					}
+					else {
+						attrs[idx][1] += " ordinal";
+					}
+
 				}
 				token.attrs = attrs;
 
